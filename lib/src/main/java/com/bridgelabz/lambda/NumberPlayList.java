@@ -2,6 +2,7 @@ package com.bridgelabz.lambda;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class NumberPlayList {
 
@@ -41,6 +42,12 @@ public class NumberPlayList {
 		System.out.println();
 		myNumberList.forEach(n->{
 			System.out.println("Mth5: foreach lambda impl value : "+ n);
+		});
+		
+		System.out.println();
+		Function<Integer, Double> toDoubleFunction = Integer::doubleValue;
+		myNumberList.forEach(n->{
+			System.out.println("Mth5: foreach lambda double value : "+ toDoubleFunction.apply(n));
 		});
  	}
 }
