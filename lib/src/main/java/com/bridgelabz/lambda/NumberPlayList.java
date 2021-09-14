@@ -104,5 +104,16 @@ public class NumberPlayList {
 		boolean oneEven = myNumberList.stream().anyMatch(isEvenFunction);
 		boolean noneMultOfSix = myNumberList.stream().noneMatch(n -> n>0 && n%6 == 0);
 		System.out.println("allEven : " + allEven+" OneEven : "+oneEven+" noneMultOfSix : "+ noneMultOfSix);
+		
+		
+		List<Integer> sortedList = myNumberList.stream()
+								   .sorted((x,y) -> x.compareTo(y))
+								   .collect(Collectors.toList());
+		System.out.println("the sorted list is : "+ sortedList);
+		
+		
+		
+		
+		
  	}
 }
