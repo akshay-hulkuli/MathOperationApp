@@ -83,5 +83,10 @@ public class NumberPlayList {
 							.findFirst()
 							.orElse(null);
 		System.out.println("the first even is : "+ firstEven);
+		
+		Integer min = myNumberList.stream()
+					  .filter(isEvenFunction)
+					  .min((x,y) -> x-y).orElse(null);
+		System.out.println("the min value is : "+min);
  	}
 }
