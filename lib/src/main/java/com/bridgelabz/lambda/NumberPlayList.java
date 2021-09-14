@@ -88,5 +88,16 @@ public class NumberPlayList {
 					  .filter(isEvenFunction)
 					  .min((x,y) -> x-y).orElse(null);
 		System.out.println("the min value is : "+min);
+		
+		Integer max = myNumberList.stream()
+					  .filter(isEvenFunction)
+					  .max(Comparator.comparing(Integer::intValue))
+					  .orElse(null);
+		System.out.println("the max value is : "+max);
+		
+		Integer sum = myNumberList.stream()
+					  .reduce(0,Integer::sum);
+		long count = myNumberList.stream().count();
+		System.out.println("the avg of "+sum+"/"+count+" is "+sum/count);
  	}
 }
