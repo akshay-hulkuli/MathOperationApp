@@ -3,6 +3,7 @@ package com.bridgelabz.lambda;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlayList {
 
@@ -48,6 +49,12 @@ public class NumberPlayList {
 		Function<Integer, Double> toDoubleFunction = Integer::doubleValue;
 		myNumberList.forEach(n->{
 			System.out.println("Mth5: foreach lambda double value : "+ toDoubleFunction.apply(n));
+		});
+		
+		System.out.println();
+		Predicate<Integer> isEvenFunction = n ->  n%2==0;
+		myNumberList.forEach(n->{
+			System.out.println("Mth5: foreach value of : "+n+" check for even : " +isEvenFunction.test(n));
 		});
  	}
 }
